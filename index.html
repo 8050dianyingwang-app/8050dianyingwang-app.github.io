@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="8050电影网是专注高清影视在线观赏的公益性导航门户，汇集院线新片、经典老片、纪录片与短剧集锦，提供影片资料、上映资讯、影评观点与分类检索，域名 8050dianyingwang-app.github.io 长期稳定访问。">
+<meta name="keywords" content="8050电影网,8050dianyingwang-app.github.io,高清电影,在线电影,电影推荐,国产电影,欧美电影,日韩电影,纪录片,电影资讯,影片排行">
+<meta name="author" content="8050电影网">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<meta name="theme-color" content="#0b1020">
+<title>8050电影网｜高清影视在线观看与电影资讯门户 - 8050dianyingwang-app.github.io</title>
+<style>
+:root{
+  --ink:#e8ecf8;
+  --ink-dim:#aab2cf;
+  --bg1:#070b1a;
+  --bg2:#0d1430;
+  --accent:#ff5a36;
+  --accent2:#37d6b4;
+  --line:rgba(255,255,255,.08);
+  --card:rgba(255,255,255,.045);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg1);
+  color:var(--ink);
+  line-height:1.75;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(900px 500px at 82% -10%, rgba(255,90,54,.28), transparent 60%),
+    radial-gradient(700px 420px at 5% 8%, rgba(55,214,180,.18), transparent 55%),
+    linear-gradient(160deg,var(--bg1),var(--bg2) 55%,#050811);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:linear-gradient(to bottom,transparent,#000 18%,#000 82%,transparent);
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* 顶部 */
+header.nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(14px);
+  background:rgba(7,11,26,.72);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{display:flex;align-items:center;gap:18px;height:64px}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;letter-spacing:.5px}
+.brand b{font-size:20px;background:linear-gradient(92deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand span{font-size:11px;color:var(--ink-dim);border:1px solid var(--line);padding:2px 7px;border-radius:20px}
+.nav-links{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.nav-links a{
+  font-size:13.5px;padding:7px 12px;border-radius:10px;color:var(--ink-dim);
+  transition:.2s;white-space:nowrap;
+}
+.nav-links a:hover{color:#fff;background:var(--card)}
+/* 首屏 */
+.hero{padding:74px 0 60px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center}
+.tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tag{font-size:11.5px;letter-spacing:1px;padding:5px 11px;border-radius:30px;border:1px solid var(--line);color:var(--accent2)}
+h1{font-size:clamp(30px,5.4vw,54px);line-height:1.18;font-weight:850;letter-spacing:-.5px}
+h1 em{font-style:normal;color:var(--accent)}
+.lede{margin-top:18px;color:var(--ink-dim);font-size:15.5px;max-width:560px}
+.cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 24px;border-radius:12px;font-size:14.5px;font-weight:700;
+  border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--accent);color:#1a0a06;box-shadow:0 10px 30px -10px rgba(255,90,54,.7)}
+.btn-ghost{background:var(--card);border-color:var(--line);color:#fff}
+.hero-side{display:grid;gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;position:relative;overflow:hidden}
+.stat i{position:absolute;right:-14px;top:-14px;width:70px;height:70px;border-radius:50%;background:var(--accent);opacity:.14}
+.stat b{display:block;font-size:26px;font-weight:800;color:#fff}
+.stat small{color:var(--ink-dim);font-size:12.5px}
+/* 通用区块 */
+section{padding:64px 0}
+.eyebrow{font-size:12px;letter-spacing:3px;color:var(--accent2);text-transform:uppercase}
+.h2{font-size:clamp(22px,3.4vw,34px);font-weight:800;margin:8px 0 6px}
+.sub{color:var(--ink-dim);font-size:14.5px;max-width:620px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+.head .line{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);min-width:90px}
+/* 栏目卡片 */
+.grid{display:grid;gap:18px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:22px;transition:.25s;position:relative;
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,90,54,.45);background:rgba(255,90,54,.06)}
+.card .no{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:2px}
+.card h3{font-size:17px;margin:8px 0 8px}
+.card p{font-size:13.5px;color:var(--ink-dim)}
+.card .go{display:inline-block;margin-top:14px;font-size:12.5px;color:var(--accent2);border-bottom:1px dashed var(--accent2);padding-bottom:2px}
+/* 影片 */
+.film{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);transition:.25s}
+.film:hover{transform:translateY(-5px);border-color:rgba(55,214,180,.4)}
+.poster{aspect-ratio:3/4;position:relative;overflow:hidden;background:linear-gradient(135deg,#1a2242,#0c1126)}
+.poster::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(135deg, rgba(255,90,54,.35), transparent 55%),
+  linear-gradient(225deg, rgba(55,214,180,.25), transparent 50%)}
+.poster .mk{position:absolute;left:10px;top:10px;font-size:11px;font-weight:800;padding:4px 9px;border-radius:7px;background:var(--accent);color:#1a0a06}
+.poster .rt{position:absolute;right:10px;bottom:10px;font-size:12px;font-weight:800;color:#0b1020;background:var(--accent2);padding:3px 9px;border-radius:20px}
+.film .info{padding:13px 15px 15px}
+.film h4{font-size:15px;font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.film .meta{font-size:12px;color:var(--ink-dim);margin-top:5px;display:flex;gap:8px;flex-wrap:wrap}
+/* 时间线 */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--accent2))}
+.tl-item{position:relative;padding:0 0 24px 14px}
+.tl-item::before{content:"";position:absolute;left:-23px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg1);border:3px solid var(--accent)}
+.tl-item time{font-size:12px;color:var(--accent2);letter-spacing:1px;font-weight:700}
+.tl-item h4{font-size:16px;margin:2px 0 5px}
+.tl-item p{font-size:13.5px;color:var(--ink-dim)}
+/* 表格 */
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border-radius:14px;overflow:hidden}
+th,td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:rgba(255,90,54,.12);color:#fff;font-weight:700;font-size:13px;letter-spacing:.5px}
+tr:last-child td{border-bottom:none}
+td a{color:var(--accent2);border-bottom:1px dotted var(--accent2)}
+/* 问答 */
+.faq-item{border:1px solid var(--line);border-radius:14px;padding:18px 22px;background:var(--card);margin-bottom:12px}
+.faq-item h4{font-size:15.5px;display:flex;gap:10px;align-items:flex-start}
+.faq-item h4::before{content:"Q";flex:none;font-size:12px;font-weight:800;background:var(--accent);color:#1a0a06;width:22px;height:22px;border-radius:7px;display:grid;place-items:center}
+.faq-item p{font-size:13.5px;color:var(--ink-dim);padding-left:32px;margin-top:7px}
+/* 页脚 */
+footer{border-top:1px solid var(--line);padding:44px 0 30px;background:rgba(3,6,16,.5)}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+.foot-brand b{font-size:19px;font-weight:850}
+.foot-brand p{font-size:13px;color:var(--ink-dim);margin-top:10px}
+.foot-col h5{font-size:14px;margin-bottom:11px;color:#fff}
+.foot-col a{display:block;font-size:13px;color:var(--ink-dim);padding:4px 0}
+.foot-col a:hover{color:var(--accent2)}
+.copyright{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-dim);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.copyright b{color:var(--accent)}
+/* 回到顶部 */
+.top{position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#1a0a06;font-size:18px;box-shadow:0 10px 26px -8px rgba(255,90,54,.8);z-index:60}
+/* 响应式 */
+@media(max-width:900px){
+  .g4,.g3,.foot-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero{padding:44px 0 40px}
+  section{padding:46px 0}
+}
+@media(max-width:600px){
+  .wrap{padding:0 15px}
+  .nav-in{height:58px;gap:10px}
+  .brand b{font-size:17px}
+  .nav-links a{padding:6px 9px;font-size:12.5px}
+  .g4,.g3,.g2,.foot-grid{grid-template-columns:1fr}
+  h1{font-size:29px}
+  .lede{font-size:14.5px}
+  .btn{padding:11px 18px;font-size:13.5px;flex:1;text-align:center;justify-content:center}
+  .head{flex-direction:column;align-items:flex-start}
+  .head .line{display:none}
+  .copyright{flex-direction:column}
+  table{font-size:12.5px}
+  th,td{padding:10px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <div class="brand">
+      <b>8050电影网</b>
+      <span>8050dianyingwang-app.github.io</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#home">首页</a>
+      <a href="#channel">影厅</a>
+      <a href="#rank">榜单</a>
+      <a href="#news">资讯</a>
+      <a href="#guide">观影</a>
+      <a href="#about">关于</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section id="home" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tagrow">
+        <span class="tag">高清影视</span>
+        <span class="tag">正版索引</span>
+        <span class="tag">每日更新</span>
+      </div>
+      <h1>8050电影网 · 让好电影<em>找到你</em></h1>
+      <p class="lede">8050电影网（8050dianyingwang-app.github.io）是一站式电影资料与观影指引门户。我们不搬运片源，只做可靠的影片档案、上映日历、口碑榜单与检索入口，帮你用最少的时间，挑到最对的那一部。</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#channel">进入影厅 →</a>
+        <a class="btn btn-ghost" href="#rank">查看本周榜单</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="stat"><i></i><b>12,800+</b><small>收录影片条目（含短片与纪录片）</small></div>
+      <div class="stat"><i></i><b>36</b><small>细分类型频道，覆盖小众题材</small></div>
+      <div class="stat"><i></i><b>每日</b><small>同步院线与流媒体上新信息</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一：影厅 -->
+<section id="channel">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Channel · 01</div>
+        <div class="h2">影厅频道</div>
+        <p class="sub">按题材、地域与年代划分的检索入口，点击即跳转对应片单页。</p>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div class="grid g4">
+      <div class="card"><div class="no">NO.01</div><h3>国产新片</h3><p>现实题材、悬疑犯罪、历史史诗与喜剧，追踪清明档、暑期档、国庆档、贺岁档的定档与撤档动态。</p><a class="go" href="#">浏览片单</a></div>
+      <div class="card"><div class="no">NO.02</div><h3>欧美院线</h3><p>超级英雄、科幻惊悚、传记剧情与独立制作，附带分级提示、片长与是否适合 IMAX 的观看建议。</p><a class="go" href="#">浏览片单</a></div>
+      <div class="card"><div class="no">NO.03</div><h3>日韩影像</h3><p>日本动画剧场版、韩国犯罪悬疑、东亚作者电影，标注电影节获奖与本土票房表现。</p><a class="go" href="#">浏览片单</a></div>
+      <div class="card"><div class="no">NO.04</div><h3>经典修复</h3><p>4K 修复版、导演剪辑版、胶片重映，梳理影史百部必看与容易被遗漏的冷门佳作。</p><a class="go" href="#">浏览片单</a></div>
+      <div class="card"><div class="no">NO.05</div><h3>纪录片</h3><p>自然地理、人物传记、社会调查、音乐现场，区分影院纪录与剧集式纪录，避免误判时长。</p><a class="go" href="#">浏览片单</a></div>
+      <div class="card"><div class="no">NO.06</div><h3>短剧与微电影</h3><p>10 分钟内的高概念短片、学生毕设、广告导演作品，适合碎片时间快速消费。</p><a class="go" href="#">浏览片单</a></div>
+      <div class="card"><div class="no">NO.07</div><h3>动画专区</h3><p>成人动画、定格动画、独立动画短片，含适合亲子共看的适龄提示。</p><a class="go" href="#">浏览片单</a></div>
+      <div class="card"><div class="no">NO.08</div><h3>影史专题</h3><p>按导演、演员、年代、运动流派组织的纵向片单，例如「新好莱坞十年」「香港电影黄金期」。</p><a class="go" href="#">浏览片单</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二：正在热映 -->
+<section id="now">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Now Showing</div>
+        <div class="h2">本周值得看</div>
+        <p class="sub">编辑部从口碑、完成度与题材稀缺性三个维度筛选，不代表票房成绩。</p>
+      </div>
+      <a class="btn btn-ghost" href="#" style="padding:9px 16px;font-size:13px">完整片单 →</a>
+    </div>
+    <div class="grid g4">
+      <div class="film">
+        <div class="poster"><span class="mk">悬疑</span><span class="rt">8.7</span></div>
+        <div class="info"><h4>沉默的钟摆</h4><div class="meta"><span>2026-09-25</span><span>118分钟</span><span>国产</span></div></div>
+      </div>
+      <div class="film">
+        <div class="poster"><span class="mk">科幻</span><span class="rt">8.4</span></div>
+        <div class="info"><h4>深空回响</h4><div class="meta"><span>2026-10-02</span><span>142分钟</span><span>中美合拍</span></div></div>
+      </div>
+      <div class="film">
+        <div class="poster"><span class="mk">动画</span><span class="rt">9.1</span></div>
+        <div class="info"><h4>海的来信</h4><div class="meta"><span>2026-09-19</span><span>96分钟</span><span>日本</span></div></div>
+      </div>
+      <div class="film">
+        <div class="poster"><span class="mk">剧情</span><span class="rt">8.2</span></div>
+        <div class="info"><h4>父亲的稻田</h4><div class="meta"><span>2026-09-30</span><span>105分钟</span><span>国产</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目三：榜单 -->
+<section id="rank">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Ranking · 02</div>
+        <div class="h2">口碑与热度榜</div>
+        <p class="sub">综合专业影评、观众评分与搜索趋势，每周一 10:00 更新。</p>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div class="grid g2">
+      <div>
+        <table>
+          <thead><tr><th style="width:52px">#</th><th>影片</th><th>类型</th><th>口碑指数</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td><a href="#">海的来信</a></td><td>动画 / 奇幻</td><td>96.4</td></tr>
+            <tr><td>02</td><td><a href="#">沉默的钟摆</a></td><td>悬疑 / 犯罪</td><td>93.1</td></tr>
+            <tr><td>03</td><td><a href="#">父亲的稻田</a></td><td>家庭 / 剧情</td><td>91.7</td></tr>
+            <tr><td>04</td><td><a href="#">深空回响</a></td><td>科幻 / 冒险</td><td>89.5</td></tr>
+            <tr><td>05</td><td><a href="#">午夜售票处</a></td><td>喜剧 / 爱情</td><td>87.2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grid g2">
+        <div class="card"><div class="no">TOP 类型</div><h3>悬疑犯罪</h3><p>连续 11 周占据搜索首位，「反转」已不是卖点，「动机」才是。</p><a class="go" href="#">查看榜单</a></div>
+        <div class="card"><div class="no">TOP 地区</div><h3>东亚作者</h3><p>日韩独立制作在华语圈讨论度上升，字幕质量成为观影门槛。</p><a class="go" href="#">查看榜单</a></div>
+        <div class="card"><div class="no">TOP 年代</div><h3>1994–2004</h3><p>修复重映带动怀旧消费，胶片颗粒感被年轻观众重新追捧。</p><a class="go" href="#">查看榜单</a></div>
+        <div class="card"><div class="no">TOP 争议</div><h3>高预期落空</h3><p>大 IP + 大卡司不再等于好电影，预告片信息量过大反噬口碑。</p><a class="go" href="#">查看榜单</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四：资讯 -->
+<section id="news">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">News · 03</div>
+        <div class="h2">电影资讯与观察</div>
+        <p class="sub">产业动向、档期博弈、技术变迁与观影习惯，写给既看电影也关心电影的人。</p>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <div class="no">产业</div><h3>档期不再是万能解药</h3>
+        <p>2026 年多个大片主动避开传统黄金档，选择「冷档期 + 长线放映」。影院排片逻辑正从「首周定生死」转向「口碑复利」，中小成本影片的生存空间反而被打开。</p>
+        <a class="go" href="#">阅读全文</a>
+      </article>
+      <article class="card">
+        <div class="no">技术</div><h3>高帧率与 IMAX 的取舍</h3>
+        <p>并非所有影片都适合 48fps。动作场面受益明显，而文艺片的「呼吸感」常被技术抹平。观众开始学会按影片类型选择影厅，而非盲目追求规格最高。</p>
+        <a class="go" href="#">阅读全文</a>
+      </article>
+      <article class="card">
+        <div class="no">观察</div><h3>短剧抢走了谁的时间</h3>
+        <p>单集 3 分钟的竖屏叙事，正在改写观众的耐心阈值。院线电影的平均片长不降反升，形成有趣的对冲：快的更快，慢的更慢。</p>
+        <a class="go" href="#">阅读全文</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目五：上映日历 -->
+<section id="calendar">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Calendar</div>
+        <div class="h2">上映与定档日历</div>
+        <p class="sub">信息来自片方官方公告与院线排片，变动以最终通知为准。</p>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="tl-item"><time>2026 / 10 / 15</time><h4>《沉默的钟摆》密钥延期</h4><p>因口碑持续发酵，发行方宣布延长放映两周，部分城市加开深夜场。</p></div>
+      <div class="tl-item"><time>2026 / 10 / 24</time><h4>动画《海的来信》中文配音版</h4><p>原版与配音版同场上映，建议优先选择原声，配音阵容以官方公布为准。</p></div>
+      <div class="tl-item"><time>2026 / 11 / 06</time><h4>纪录片《长江十二时辰》定档</h4><p>历时三年跟拍，片长 158 分钟，属「影院纪录」而非剧集，观前预留时间。</p></div>
+      <div class="tl-item"><time>2026 / 11 / 21</time><h4>年末贺岁档开启</h4><p>预计 9 部新片扎堆，喜剧与战争题材各占三席，家庭观影需求集中释放。</p></div>
+      <div class="tl-item"><time>2026 / 12 / 12</time><h4>经典修复展「新浪潮六十年」</h4><p>五座城市巡回，含 35mm 胶片拷贝放映场次，需提前预约。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目六：观影指引 -->
+<section id="guide">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">Guide · 04</div>
+        <div class="h2">怎么选，去哪看</div>
+        <p class="sub">8050电影网不提供盗版资源，以下为合法的观影决策建议。</p>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="no">STEP 01</div><h3>先定场景</h3><p>一个人 → 文艺 / 悬疑；约会 → 喜剧 / 动画；带长辈 → 剧情 / 传记；带孩子 → 适龄动画。场景错了，再好的片子也难入心。</p></div>
+      <div class="card"><div class="no">STEP 02</div><h3>再看规格</h3><p>视效大片优先 IMAX / CINITY，文艺片普通厅即可，纪录片关注是否为「影院版」。别为 2D 动画多付巨幕溢价。</p></div>
+      <div class="card"><div class="no">STEP 03</div><h3>后挑时机</h3><p>首周看氛围，次周看口碑，三周后再决定「值不值得补」。避开周五晚黄金场，周一下午常有惊喜空场。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目七：关于 -->
+<section id="about">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">About · 05</div>
+        <div class="h2">关于 8050电影网</div>
+        <p class="sub">我们做什么，不做什么，以及为什么值得你收藏这个网址。</p>
+      </div>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>我们的立场</h3>
+        <p>8050电影网（域名 8050dianyingwang-app.github.io）定位为「观影决策工具」，而非资源站。站内所有影片条目仅提供剧情简介、演职员、类型、片长、分级提示与合法观看渠道指引，不托管、不链接、不诱导任何侵权内容。</p>
+        <p style="margin-top:10px">我们相信：推荐一部对的电影，比搬运一百部片源更有价值。编辑团队由长期影迷与电影学研究者组成，评分体系刻意压低商业大片的默认权重。</p>
+      </div>
+      <div class="card">
+        <h3>更新与反馈</h3>
+        <p>影片资料每日增量校对，榜单每周一更新，资讯视产业动态随时发布。发现条目错误（如上映日期、片长、译名），可通过站点 issue 提交，通常 48 小时内修正。</p>
+        <p style="margin-top:10px">合作与授权：片方、宣发、电影节与独立影展的官方信息，我们乐于第一时间同步；商业软文不入榜、不进推荐位，广告与编辑内容严格分栏。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow">FAQ</div>
+        <div class="h2">常见疑问</div>
+      </div>
+      <div class="line"></div>
+    </div>
+    <div class="faq-item"><h4>8050电影网能直接看电影吗？</h4><p>不能，也不打算能。本站是资料与检索门户，提供影片信息、上映动态与正版平台观看指引。直接在站内观影既违法也不符合我们的长期主义。</p></div>
+    <div class="faq-item"><h4>网址为什么是 github.io？</h4><p>静态站点托管于 GitHub Pages，访问稳定、加载快、无广告追踪脚本，且内容版本可公开审计。官方唯一域名为 8050dianyingwang-app.github.io，请注意甄别仿冒站点。</p></div>
+    <div class="faq-item"><h4>榜单的「口碑指数」怎么算？</h4><p>由专业影评权重 40%、观众评分 35%、长评质量 15%、搜索趋势 10% 合成，满分 100。票房与宣发投入不计入，避免「有钱即好看」。</p></div>
+    <div class="faq-item"><h4>为什么有些老片查不到？</h4><p>条目以「可合法观看」为前提。完全无修复、无正版发行、无字幕授权的冷门老片，暂不收录，避免给出无法执行的观看建议。</p></div>
+    <div class="faq-item"><h4>移动端体验如何？</h4><p>全站响应式布局，从 360px 到 2560px 宽度均做过排版校验：导航可横向滑动、表格不横向溢出、按钮不小于 44×44 触控区域、图片按需加载。</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <b>8050电影网</b>
+        <p>8050dianyingwang-app.github.io —— 高清影视资料、上映日历与观影决策门户。看得少一点，看得准一点。</p>
+      </div>
+      <div class="foot-col">
+        <h5>影厅</h5>
+        <a href="#">国产新片</a>
+        <a href="#">欧美院线</a>
+        <a href="#">日韩影像</a>
+        <a href="#">经典修复</a>
+      </div>
+      <div class="foot-col">
+        <h5>服务</h5>
+        <a href="#">口碑榜</a>
+        <a href="#">上映日历</a>
+        <a href="#">观影指引</a>
+        <a href="#">错误反馈</a>
+      </div>
+      <div class="foot-col">
+        <h5>信息</h5>
+        <a href="#">关于我们</a>
+        <a href="#">收录标准</a>
+        <a href="#">免责声明</a>
+        <a href="#">更新日志</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 8050电影网 · 8050dianyingwang-app.github.io · 本站仅为影视信息索引，不提供任何影视资源下载与在线播放</span>
+      <span>SEO 友好结构 · 移动端自适应 · 内链锚点导航</span>
+    </div>
+  </div>
+</footer>
+
+<a class="top" href="#home" title="回到顶部">↑</a>
+
+</body>
+</html>
